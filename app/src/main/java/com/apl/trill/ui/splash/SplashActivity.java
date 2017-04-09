@@ -5,17 +5,25 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.ImageView;
 
 
 import com.apl.trill.R;
+import com.apl.trill.R2;
 import com.apl.trill.ui.main.MainActivity;
 import com.apl.trill.ui.splash.contract.SplashContract;
 import com.apl.trill.ui.splash.model.SplashModel;
 import com.apl.trill.ui.splash.presenter.SplashPresenter;
+import com.bumptech.glide.Glide;
 import com.vittaw.mvplibrary.base.BaseActivity;
+
+import butterknife.BindView;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class SplashActivity extends BaseActivity<SplashPresenter,SplashModel>implements SplashContract.View , Handler.Callback{
     private Handler mHandler=new Handler(this);
+    @BindView(R2.id.splash_image)
+    ImageView mSplshImage;
 
     @Override
     public int getLayoutId() {
@@ -29,6 +37,8 @@ public class SplashActivity extends BaseActivity<SplashPresenter,SplashModel>imp
 
     @Override
     public void initView() {
+        int resourceId = R.mipmap.app_icon;
+        Glide.with(this).load(resourceId).bitmapTransform(new CropCircleTransformation(this)).into(mSplshImage);
 
         mHandler.sendEmptyMessageDelayed(10,1*1000);
     }
