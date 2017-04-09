@@ -1,0 +1,2 @@
+①issue:butterknife.BindView ,没有R2文件
+solve:需要重新导入依赖
