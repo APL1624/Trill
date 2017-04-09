@@ -1,2 +1,7 @@
 ①issue:butterknife.BindView ,没有R2文件
 solve:需要重新导入依赖
+②RadioButton第一次设置选中，最好通过id直接选择，通过父类有点繁琐
+③Picasso和glide的区别：
+表面看上去似乎两者工作原理很相似，但是实际上是有着很大差别的。
+Glide加载图像以及磁盘缓存的方式都要优于Picasso，速度更快，并且Glide更有利于减少OutOfMemoryError的发生，
+GIF动画是Glide的杀手锏。不过Picasso的图片质量更高。

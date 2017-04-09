@@ -20,7 +20,7 @@
     <View
         android:id="@+id/full_home_tab_move_line"
         android:layout_width="60dp"
-        android:layout_height="5dp"
+        android:layout_height="3dp"
         android:background="@color/color_white"
         android:layout_alignLeft="@id/full_home_tab_line"
         android:layout_below="@id/full_home_tab_line"/>

@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:text="不开心"
         android:textSize="80sp"
-        android:layout_centerInParent="true"
+        android:gravity="center"
         android:textColor="@color/color_white"
         android:background="@color/color_alpha_black_3"/>
 
