@@ -1,6 +1,7 @@
 package com.apl.trill.view;
 
 import android.support.v4.view.ViewPager;
+import android.view.MotionEvent;
 import android.view.View;
 
 /**
@@ -21,4 +22,5 @@ public class VerticalPageTransformer implements ViewPager.PageTransformer {
            page.setAlpha(0);
         }
     }
+
 }
