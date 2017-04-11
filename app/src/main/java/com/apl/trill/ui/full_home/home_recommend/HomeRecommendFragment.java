@@ -124,20 +124,20 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
                     case MotionEvent.ACTION_DOWN:
                         mDownX = motionEvent.getX();
                         mDownY = motionEvent.getY();
-                        Log.e(TAG, "down:" + mDownX + ":" + mDownY);
+
 
                         break;
 
                     case MotionEvent.ACTION_MOVE:
                         mMoveX = motionEvent.getX();
                         mMoveY = motionEvent.getY();
-                        Log.e(TAG, "Move:" + mMoveX + ":" + mMoveY);
+
                         break;
 
                     case MotionEvent.ACTION_UP:
                         mUpX = motionEvent.getX();
                         mUpY = motionEvent.getY();
-                        Log.e(TAG, "UP:" + mUpX + ":" + mUpY);
+
                         break;
                 }
                 if (Math.abs(mUpX - mDownX) < 1 && Math.abs(mUpY - mDownY) < 1) {
@@ -191,6 +191,8 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
 
     @Override
     public void onPageSelected(int position) {
+        mDetailPagerCover.setVisibility(View.VISIBLE);
+        mDetailPagerVideo.setVisibility(View.GONE);
         Log.e(TAG, "Selected:" + position);
 
     }
@@ -200,8 +202,8 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
         if (state == ViewPager.SCROLL_STATE_IDLE) {
             mState = 0;
             Log.e(TAG, "静止");
-            mMediaPlayer.stop();
-            mMediaPlayer.reset();
+
+
             initViewPagerView();
         } else {
             mState = 1;
@@ -239,6 +241,8 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
 
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+        mMediaPlayer.stop();
+        mMediaPlayer.release();
 
     }
 }

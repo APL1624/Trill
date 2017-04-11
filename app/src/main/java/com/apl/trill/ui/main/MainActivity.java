@@ -3,6 +3,8 @@ package com.apl.trill.ui.main;
 
 
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
+import android.widget.Toast;
 
 
 import com.apl.trill.R;
@@ -26,6 +28,7 @@ import butterknife.BindView;
 public class MainActivity extends BaseActivity<MainPresenter,MainModel> implements MainContract.View{
     @BindView(R2.id.main_content)
     FqcViewPager mMainVp;
+    private long firstTime=0;
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -67,4 +70,22 @@ public class MainActivity extends BaseActivity<MainPresenter,MainModel> implemen
     public FqcViewPager getFqcViewPager(){
         return mMainVp;
     }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+           case  KeyEvent.KEYCODE_BACK:
+               long secondTime = System.currentTimeMillis();
+               if (secondTime-firstTime>2000) {
+                   Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                   firstTime=secondTime;
+                   return true;
+               }else {
+                   System.exit(0);
+               }
+               break;
+        }
+        return super.onKeyUp(keyCode,event);
+    }
+
 }
