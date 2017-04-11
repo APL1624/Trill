@@ -1,6 +1,7 @@
 package com.apl.trill.ui.full_home;
 
 
+import android.app.Activity;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -14,6 +15,7 @@ import com.apl.trill.ui.full_home.home_recommend.HomeRecommendFragment;
 import com.apl.trill.ui.full_home.model.HomeFragmentModel;
 import com.apl.trill.ui.full_home.presenter.HomeFragmentPresenter;
 
+import com.apl.trill.ui.main.MainActivity;
 import com.apl.trill.util.DensityUtils;
 import com.apl.trill.util.SwitchFragment;
 import com.vittaw.mvplibrary.base.BaseFragment;
@@ -54,6 +56,7 @@ public class HomeFragment extends BaseFragment<HomeFragmentModel, HomeFragmentPr
         mFullHomeTabRecommend.setChecked(true);
 
 
+
     }
 
 
@@ -76,24 +79,26 @@ public class HomeFragment extends BaseFragment<HomeFragmentModel, HomeFragmentPr
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
+        MainActivity activity = (MainActivity) mActivity;
+
         switch (i) {
             case R.id.full_home_tab_attention:
                 mCheckedPosition=0;
                 moveLineMove(mCheckedPosition);
-
+                activity.getFqcViewPager().setNoScroll(false);
                 mHomeShowFragment=SwitchFragment.switchFragment(HomeAttentionFragment.class,getActivity(),mHomeShowFragment,R.id.full_home_content);
 
                 break;
             case R.id.full_home_tab_recommend:
                 mCheckedPosition=1;
                 moveLineMove(mCheckedPosition);
-
+                activity.getFqcViewPager().setNoScroll(false);
                 mHomeShowFragment=SwitchFragment.switchFragment(HomeRecommendFragment.class,getActivity(),mHomeShowFragment,R.id.full_home_content);
                 break;
             case R.id.full_home_tab_fresh:
                 mCheckedPosition=2;
                 moveLineMove(mCheckedPosition);
-
+                activity.getFqcViewPager().setNoScroll(true);
                 mHomeShowFragment=SwitchFragment.switchFragment(HomeFreshFragment.class,getActivity(),mHomeShowFragment,R.id.full_home_content);
                 break;
         }

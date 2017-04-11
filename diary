@@ -5,3 +5,5 @@ solve:需要重新导入依赖
 表面看上去似乎两者工作原理很相似，但是实际上是有着很大差别的。
 Glide加载图像以及磁盘缓存的方式都要优于Picasso，速度更快，并且Glide更有利于减少OutOfMemoryError的发生，
 GIF动画是Glide的杀手锏。不过Picasso的图片质量更高。
+④Fragement+ViewPager+Fragment+ViewPager+Fragment嵌套触摸事件冲突，无法解决
+解决方案：Fragment+ViewPager+Fragment+ViewPager+View ,同一在ViewPager上加触摸监听

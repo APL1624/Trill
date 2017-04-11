@@ -3,6 +3,7 @@ package com.apl.trill.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  * Created by Administrator on 2017/4/9.
  */
 
-public class HomeRecommendDetailViewpagerAdapter extends FragmentPagerAdapter{
+public class HomeRecommendDetailViewpagerAdapter extends FragmentStatePagerAdapter{
     List<Fragment>data;
 
     public HomeRecommendDetailViewpagerAdapter(FragmentManager fm, List<Fragment> data) {

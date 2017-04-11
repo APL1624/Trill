@@ -2,14 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.apl.trill.view.FullVideoView
+    <SurfaceView
         android:id="@+id/full_home_ar_detail_pager_video"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <View
+        android:layout_height="match_parent"
+        android:visibility="gone"
+       />
+    <ImageView
+        android:id="@+id/full_home_ar_detail_pager_cover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_alpha_0"/>
+        android:src="@mipmap/cry_dog"
+        android:scaleType="fitXY"
+       />
+    <ImageView
+        android:id="@+id/full_home_ar_detail_pager_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/cry_play"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
     <LinearLayout
         android:layout_width="260dp"
         android:layout_height="150dp"
@@ -92,28 +105,12 @@
             android:src="@mipmap/cry_real_add"
             android:layout_marginTop="35dp"/>
         <ImageView
-            android:id="@+id/full_home_ar_detail_pager_right_comment"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/full_home_ar_detail_pager_right_head"
-            android:src="@mipmap/cry_comment"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3.7W"
-            android:textSize="12sp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/full_home_ar_detail_pager_right_comment"
-            android:textColor="@color/color_white"/>
-        <ImageView
             android:id="@+id/full_home_ar_detail_pager_right_like"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_below="@id/full_home_ar_detail_pager_right_comment"
+            android:layout_below="@id/full_home_ar_detail_pager_right_head"
             android:src="@mipmap/cry_like"/>
         <TextView
             android:layout_width="wrap_content"
@@ -123,6 +120,23 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/full_home_ar_detail_pager_right_like"
             android:textColor="@color/color_white"/>
+        <ImageView
+            android:id="@+id/full_home_ar_detail_pager_right_comment"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/full_home_ar_detail_pager_right_like"
+            android:src="@mipmap/cry_comment"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.7W"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/full_home_ar_detail_pager_right_comment"
+            android:textColor="@color/color_white"/>
+
 
         <ImageView
             android:id="@+id/full_home_ar_detail_pager_right_transmit"
@@ -130,7 +144,7 @@
             android:layout_height="30dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_below="@id/full_home_ar_detail_pager_right_like"
+            android:layout_below="@id/full_home_ar_detail_pager_right_comment"
             android:src="@mipmap/cry_transmit"/>
         <ImageView
             android:layout_width="40dp"
