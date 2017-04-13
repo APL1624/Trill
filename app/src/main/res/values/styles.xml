@@ -8,6 +8,38 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="FullAddActivityTranslucent" parent="Theme.AppCompat.Light">
+        <!--半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--背景颜色透明-->
+        <item name="android:windowBackground">@color/color_alpha_0</item>
+        <!--无标题-->
+        <item name="windowNoTitle">true</item>
+        <!--模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+
+    </style>
+
+    <!--<style name="FullAddActivityTranslucent" parent="AlertDialog.AppCompat.Light">-->
+        <!--&lt;!&ndash;边框&ndash;&gt;-->
+        <!--<item name="android:windowFrame">@null</item>-->
+        <!--&lt;!&ndash;是否浮现在activity之上&ndash;&gt;-->
+        <!--<item name="android:windowIsFloating">true</item>-->
+        <!--&lt;!&ndash;半透明&ndash;&gt;-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--&lt;!&ndash;背景颜色透明&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="android:windowBackground">@color/color_alpha_0</item>&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@drawable/corner_activity</item>-->
+        <!--&lt;!&ndash;无标题&ndash;&gt;-->
+        <!--<item name="windowNoTitle">true</item>-->
+        <!--&lt;!&ndash;模糊&ndash;&gt;-->
+        <!--<item name="android:backgroundDimEnabled">true</item>-->
+
+        <!--<item name="android:windowFullscreen">true</item>-->
+
+    <!--</style>-->
+    
+
     <style name="fragment_main_bottom_radio_button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>

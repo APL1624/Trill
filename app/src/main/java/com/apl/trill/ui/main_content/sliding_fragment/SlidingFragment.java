@@ -1,7 +1,8 @@
 package com.apl.trill.ui.main_content.sliding_fragment;
 
 import com.apl.trill.R;
-import com.apl.trill.ui.main_content.sliding_fragment.contrant.SlidingFragmentContract;
+
+import com.apl.trill.ui.main_content.sliding_fragment.contract.SlidingFragmentContract;
 import com.apl.trill.ui.main_content.sliding_fragment.model.SlidingFragmentModel;
 import com.apl.trill.ui.main_content.sliding_fragment.presenter.SlidingFragmentPresenter;
 import com.vittaw.mvplibrary.base.BaseFragment;
@@ -11,6 +12,7 @@ import com.vittaw.mvplibrary.base.BaseFragment;
  */
 
 public class SlidingFragment  extends BaseFragment<SlidingFragmentModel,SlidingFragmentPresenter> implements SlidingFragmentContract.View {
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_sliding;
