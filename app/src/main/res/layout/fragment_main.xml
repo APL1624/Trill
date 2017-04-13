@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <FrameLayout
         android:id="@+id/fragment_main_content"
         android:layout_width="match_parent"
@@ -14,53 +13,57 @@
         android:id="@+id/fragment_main_bottom_container"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
         android:background="@color/color_alpha_0"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+    <RadioButton
+        android:id="@+id/fragment_main_bottom_home"
+        style="@style/fragment_main_bottom_radio_button"
+        android:layout_weight="1.5"
+        android:drawableTop="@drawable/fragment_main_bottom_home_btn"
+        android:text="@string/home_name"
+        />
 
-        <RadioButton
-            android:id="@+id/fragment_main_bottom_home"
-            style="@style/fragment_main_bottom_radio_button"
-            android:layout_weight="1.5"
-            android:drawableTop="@drawable/fragment_main_bottom_home_btn"
-            android:text="@string/home_name" />
+    <RadioButton
+        android:id="@+id/fragment_main_bottom_found"
+        style="@style/fragment_main_bottom_radio_button"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/fragment_main_bottom_found_btn"
+        android:text="@string/found_name"
+        />
 
-        <RadioButton
-            android:id="@+id/fragment_main_bottom_found"
-            style="@style/fragment_main_bottom_radio_button"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/fragment_main_bottom_found_btn"
-            android:text="@string/found_name" />
+    <Button
+        android:id="@+id/fragment_main_bottom_add"
+        style="@style/fragment_main_bottom_radio_button"
+        android:layout_weight="1.5"
+        android:drawableBottom="@drawable/fragment_main_bottom_add_btn"
+        android:paddingBottom="10dp"
+        android:background="@color/color_alpha_0"
+        />
 
-        <Button
-            android:id="@+id/fragment_main_bottom_add"
-            style="@style/fragment_main_bottom_radio_button"
-            android:layout_weight="1.5"
-            android:background="@color/color_alpha_0"
-            android:drawableBottom="@drawable/fragment_main_bottom_add_btn"
-            android:paddingBottom="10dp" />
+    <RadioButton
+        android:id="@+id/fragment_main_bottom_msg"
+        style="@style/fragment_main_bottom_radio_button"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/fragment_main_bottom_msg_btn"
+        android:text="@string/msg_name"
+        />
 
-        <RadioButton
-            android:id="@+id/fragment_main_bottom_msg"
-            style="@style/fragment_main_bottom_radio_button"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/fragment_main_bottom_msg_btn"
-            android:text="@string/msg_name" />
-
-        <RadioButton
-            android:id="@+id/fragment_main_bottom_mine"
-            style="@style/fragment_main_bottom_radio_button"
-            android:layout_weight="1.5"
-            android:drawableTop="@drawable/fragment_main_bottom_mine_btn"
-            android:text="@string/mine_name" />
+    <RadioButton
+        android:id="@+id/fragment_main_bottom_mine"
+        style="@style/fragment_main_bottom_radio_button"
+        android:layout_weight="1.5"
+        android:drawableTop="@drawable/fragment_main_bottom_mine_btn"
+        android:text="@string/mine_name"
+        />
     </RadioGroup>
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:src="@mipmap/user_point"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="45dp"
-        android:layout_marginRight="30dp"
-        android:src="@mipmap/user_point" />
+        android:layout_marginRight="30dp"/>
 </RelativeLayout>

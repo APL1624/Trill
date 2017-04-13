@@ -5,8 +5,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
+
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -100,7 +99,8 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
 
 
         for (int i = 0; i < 10; i++) {
-            mHomeRecommendDetailLv.add(new DetailPager(mActivity));
+            DetailPager detailPager = new DetailPager(mActivity);
+            mHomeRecommendDetailLv.add(detailPager);
 
         }
 
@@ -144,12 +144,15 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
                     if (mExchangeFlag == 0) {
                         mMediaPlayer.pause();
                         mCurrentPosition = mMediaPlayer.getCurrentPosition();
+                        Log.e(TAG, "pause");
                         mVideoPlay.setVisibility(View.VISIBLE);
                         mExchangeFlag = 1;
                     } else {
+                        Log.e(TAG, "restart");
                         mMediaPlayer.seekTo(mCurrentPosition);
                         mMediaPlayer.start();
                         mVideoPlay.setVisibility(View.GONE);
+
                         mExchangeFlag = 0;
                     }
 
@@ -167,12 +170,11 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
         Log.e(TAG, "SCoLL:" + mCurrentItem);
         View currentView = mHomeRecommendVerticalVp.getChildAt(mCurrentItem);
         mDetailPagerVideo = (SurfaceView) currentView.findViewById(R.id.full_home_ar_detail_pager_video);
+        Log.e(TAG, "？？？:" + mCurrentItem);
         mDetailPagerCover = currentView.findViewById(R.id.full_home_ar_detail_pager_cover);
         mVideoPlay = currentView.findViewById(R.id.full_home_ar_detail_pager_play);
         mDetailPagerCover.setVisibility(View.GONE);
         mDetailPagerVideo.setVisibility(View.VISIBLE);
-
-
         mHolder = mDetailPagerVideo.getHolder();
         mHolder.addCallback(this);
 
@@ -191,8 +193,9 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
 
     @Override
     public void onPageSelected(int position) {
-        mDetailPagerCover.setVisibility(View.VISIBLE);
         mDetailPagerVideo.setVisibility(View.GONE);
+        mDetailPagerCover.setVisibility(View.VISIBLE);
+
         Log.e(TAG, "Selected:" + position);
 
     }
@@ -202,8 +205,6 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
         if (state == ViewPager.SCROLL_STATE_IDLE) {
             mState = 0;
             Log.e(TAG, "静止");
-
-
             initViewPagerView();
         } else {
             mState = 1;
@@ -216,12 +217,15 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
 
     @Override
     public void onPrepared(MediaPlayer mediaPlayer) {
+        Log.e(TAG, "妈了个巴子");
+
         mediaPlayer.start();
         mediaPlayer.setLooping(true);
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
+        Log.e(TAG, "surfaceCreated");
         mMediaPlayer = new MediaPlayer();
         mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         mMediaPlayer.setDisplay(mHolder);
@@ -236,11 +240,13 @@ public class HomeRecommendFragment extends BaseFragment<HomeRecommendFragmentMod
 
     @Override
     public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
+        Log.e(TAG, "surfaceChanged");
 
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+        Log.e(TAG, " surfaceDestroyed");
         mMediaPlayer.stop();
         mMediaPlayer.release();
 

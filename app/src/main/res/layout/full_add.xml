@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.apl.trill.view.PullFinishLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/pull_finish_layout"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <FrameLayout
-        android:id="@+id/add_container"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_white"/>
+        android:gravity="center"
+        android:text="WWT"
+        android:textSize="50sp"/>
 
-
-</com.apl.trill.view.PullFinishLayout>
+</LinearLayout>

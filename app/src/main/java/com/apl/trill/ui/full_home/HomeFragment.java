@@ -1,7 +1,6 @@
 package com.apl.trill.ui.full_home;
 
 
-import android.app.Activity;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -11,7 +10,8 @@ import com.apl.trill.R2;
 import com.apl.trill.ui.full_home.contrant.HomeFragmentContract;
 import com.apl.trill.ui.full_home.home_attention.HomeAttentionFragment;
 import com.apl.trill.ui.full_home.home_fresh.HomeFreshFragment;
-import com.apl.trill.ui.full_home.home_recommend.HomeRecommendFragment;
+
+import com.apl.trill.ui.full_home.home_recommend.HomeRecommendFragmentList;
 import com.apl.trill.ui.full_home.model.HomeFragmentModel;
 import com.apl.trill.ui.full_home.presenter.HomeFragmentPresenter;
 
@@ -93,7 +93,7 @@ public class HomeFragment extends BaseFragment<HomeFragmentModel, HomeFragmentPr
                 mCheckedPosition=1;
                 moveLineMove(mCheckedPosition);
                 activity.getFqcViewPager().setNoScroll(false);
-                mHomeShowFragment=SwitchFragment.switchFragment(HomeRecommendFragment.class,getActivity(),mHomeShowFragment,R.id.full_home_content);
+                mHomeShowFragment=SwitchFragment.switchFragment(HomeRecommendFragmentList.class,getActivity(),mHomeShowFragment,R.id.full_home_content);
                 break;
             case R.id.full_home_tab_fresh:
                 mCheckedPosition=2;

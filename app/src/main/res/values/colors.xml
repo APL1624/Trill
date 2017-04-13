@@ -4,23 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-
-
+    <color name="color_white">#ffffffff</color>
+    <color name="color_gray_9">#ff999999</color>
     <color name="color_alpha_0">#00ffffff</color>
     <color name="color_alpha_3">#33ffffff</color>
-
-    <color name="color_white">#ffffffff</color>
-    <color name="color_gray_e">#ffeeeeee</color>
-    <color name="color_gray_d">#ffdddddd</color>
-    <color name="color_gray_c">#ffcccccc</color>
-    <color name="color_gray_9">#ff999999</color>
-    <color name="color_gray_6">#ff666666</color>
-    <color name="color_gray_7">#ff777777</color>
-    <color name="color_gray_8">#ff888888</color>
-    <color name="color_gray_3">#ff333333</color>
-    <color name="color_gray_2">#ff222222</color>
-    <color name="color_gray_1">#ff111111</color>
-    <color name="color_black">#000</color>
 
     <color name="color_alpha_black_3">#33000000</color>
 

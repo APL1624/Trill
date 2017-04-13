@@ -19,6 +19,7 @@ public class VerticalViewPager extends ViewPager {
         setPageTransformer(true,new VerticalPageTransformer());
         setOverScrollMode(OVER_SCROLL_NEVER);
     }
+
     private MotionEvent swapXY(MotionEvent ev) {
         float width = getWidth();
         float height = getHeight();
@@ -29,13 +30,6 @@ public class VerticalViewPager extends ViewPager {
         ev.setLocation(newX, newY);
 
         return ev;
-    }
-
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        boolean intercepted= super.onInterceptTouchEvent(ev);
-
-        return intercepted;
     }
 
     @Override

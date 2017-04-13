@@ -5,5 +5,5 @@ package com.apl.trill.constants;
  */
 
 public class HttpConstans {
-    public static final String HOST_NAME="https://api.amemv.com";
+    public static final String HOST_NAME="";
 }

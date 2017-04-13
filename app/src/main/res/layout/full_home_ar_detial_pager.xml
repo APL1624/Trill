@@ -2,19 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <SurfaceView
+
+
+
+    <VideoView
         android:id="@+id/full_home_ar_detail_pager_video"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-       />
+        android:background="@color/color_alpha_0"
+        />
     <ImageView
         android:id="@+id/full_home_ar_detail_pager_cover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@mipmap/cry_dog"
         android:scaleType="fitXY"
-       />
+        />
+
     <ImageView
         android:id="@+id/full_home_ar_detail_pager_play"
         android:layout_width="wrap_content"

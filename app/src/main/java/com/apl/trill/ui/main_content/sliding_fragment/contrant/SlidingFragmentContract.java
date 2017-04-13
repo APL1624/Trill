@@ -1,4 +1,4 @@
-package com.apl.trill.ui.main_content.sliding_fragment.contract;
+package com.apl.trill.ui.main_content.sliding_fragment.contrant;
 
 import com.vittaw.mvplibrary.base.BaseModel;
 import com.vittaw.mvplibrary.base.BasePresenter;

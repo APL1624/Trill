@@ -10,17 +10,12 @@ import android.view.View;
 public class VerticalPageTransformer implements ViewPager.PageTransformer {
     @Override
     public void transformPage(View page, float position) {
-        if(position<-1){
-            page.setAlpha(0);
-        }else if(position<=1){
+
             page.setAlpha(1);
             page.setTranslationX(page.getWidth()*-position);
             float yPosition = position * page.getHeight();
             page.setTranslationY(yPosition);
-        }else { // (1,+Infinity]
-            // This page is way off-screen to the right.
-           page.setAlpha(0);
-        }
+
     }
 
 }
